@@ -1,4 +1,4 @@
-# Discord.Py-Bot-Template
+# Discord.Py Bot Template
 This is a bot template for begineers
 
 **Instructions**
