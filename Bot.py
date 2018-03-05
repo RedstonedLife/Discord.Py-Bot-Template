@@ -17,7 +17,7 @@ async def info(ctx):
 
 @bot.event
 async def on_ready():
-  print("Logged in as: " + bot.user.name + " " + "With the id: " + bot.user.id)
+  print(bot.user.id)
   print("---------------------------------------------------------------------")
   
 bot.run(config.token) #This will run the bot with the token taken from config.py
