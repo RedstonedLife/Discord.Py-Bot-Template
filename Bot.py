@@ -3,9 +3,30 @@ from discord.ext import commands
 import requests
 import asyncio
 import config
+import json
 
+pf=False
 bot = commands.Bot(command_prefix='Bot Prefix (Example: b;)')
 
+with open("HardDrive:\FolderName\profanities.json") as f:
+  if(pf == False):
+    return
+  else:
+    file = json.load(f)
+    words = file["words"]
+
+@bot.event
+async def on_message(message : discord.Message):
+  if(pf == False):
+    return
+  else:
+    content = message.content.lower().split(' ')
+    for word in content:
+     for swear in words:
+       if swear in word:
+         await message.channel.purge(limit=1)
+         await message.channel.send('<@%s> Language!' % message.author.id)
+    
 @bot.command(pass_context=True)
 async def info(ctx):
   embed=discord.Embed(color=0xff7171)
