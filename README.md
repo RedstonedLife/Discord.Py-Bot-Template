@@ -18,6 +18,25 @@ This is a bot template for begineers
 4. After you created a bot (A.k.a App) create a **`Bot user`** for it (Just a warning don't give ANYONE the bot token, They can then abuse the token)
 5. And your ready to go and use the Discord Bot Template
 
+**Instructions How to use the profanity filter module**
+
+1. Go to `Bot.py` and enable the pf type in pf=True instead of pf=False
+2. Go to `Profanities.json` and add your own profanities.
+3. Enjoy your profanity Filter module :D
+
+**Insturctions How to add Profanities to profanities.json**
+
+1. All profanities need to be inside quotes like this. "S@%t"
+2. After every profanity end quote add a comma, The last profanity word SHOULDN'T have a comma!
+
+Example:
+  {words:[
+    "ProfanityWord1",
+    "ProfanityWord2"
+    ]
+  }
+  
+
 
 
 
