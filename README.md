@@ -21,8 +21,9 @@ This is a bot template for begineers
 **Instructions How to use the profanity filter module**
 
 1. Go to `Bot.py` and enable the pf type in pf=True instead of pf=False
-2. Go to `Profanities.json` and add your own profanities.
-3. Enjoy your profanity Filter module :D
+2. In `Bot.py` instead of "HardDrive:\Folder\profanities.json" Put the location of your folder, Example: "D:\Bot\profanities.json"
+3. Go to `Profanities.json` and add your own profanities.
+4. Enjoy your profanity Filter module :D
 
 **Insturctions How to add Profanities to profanities.json**
 
