@@ -5,27 +5,14 @@ import asyncio
 import config
 import json
 
-pf=False
 bot = commands.Bot(command_prefix='Bot Prefix (Example: b;)')
 
-with open("HardDrive:\FolderName\profanities.json") as f:
+with open("DiskName:\FolderName\profanities.json") as f:
   if(pf == False):
     return
   else:
     file = json.load(f)
     words = file["words"]
-
-@bot.event
-async def on_message(message : discord.Message):
-  if(pf == False):
-    return
-  else:
-    content = message.content.lower().split(' ')
-    for word in content:
-     for swear in words:
-       if swear in word:
-         await message.channel.purge(limit=1)
-         await message.channel.send('<@%s> Language!' % message.author.id)
     
 @bot.command(pass_context=True)
 async def info(ctx):
@@ -40,6 +27,16 @@ async def info(ctx):
 async def on_ready():
   print(bot.user.id)
   print("---------------------------------------------------------------------")
+  
+@bot.event
+async def on_message(message : discord.Message):
+  
+  content = message.content.lower().split(' ')
+  for word in content
+    for swear in words:
+       if swear in word:
+         await message.channel.purge(limit=1)
+         await message.channel.send('<@%s> Language!' % message.author.id)
   
 bot.run(config.token) #This will run the bot with the token taken from config.py
 
