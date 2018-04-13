@@ -1,3 +1,4 @@
+#Imports
 import discord
 from discord.ext import commands
 import requests
@@ -5,15 +6,18 @@ import asyncio
 import config
 import json
 
+#Variables
 bot = commands.Bot(command_prefix='Bot Prefix (Example: b;)')
 
+#Opening Files
 with open("DiskName:\FolderName\profanities.json") as f:
   if(pf == False):
     return
   else:
     file = json.load(f)
     words = file["words"]
-    
+
+#Commands / Events
 @bot.command(pass_context=True)
 async def info(ctx):
   embed=discord.Embed(color=0xff7171)
@@ -39,4 +43,5 @@ async def on_message(message : discord.Message):
          await message.channel.send('<@%s> Language!' % message.author.id)
   
 bot.run(config.token) #This will run the bot with the token taken from config.py
+
 
